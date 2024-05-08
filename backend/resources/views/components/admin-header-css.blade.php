@@ -9,6 +9,7 @@
     <link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- loader-->
     <link href="{{asset('assets/css/pace.min.css')}}" rel="stylesheet" />
     <script src="{{asset('assets/js/pace.min.js')}}"></script>

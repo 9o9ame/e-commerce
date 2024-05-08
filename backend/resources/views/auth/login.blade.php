@@ -32,7 +32,7 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-end my-4">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
@@ -42,6 +42,29 @@
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
+        </div>
+        <div class="form-group text-center">
+
+            <label for="name" class="col-md-4 control-label">Login With</label>
+
+            <div class="col-md-12">
+
+                <a href="{{ url('auth/facebook') }}" class="btn btn-social-icon btn-facebook" style="font-size: 30px; padding: 3px;"><i class="fab fa-facebook"></i></a>
+
+                <a href="{{ url('auth/google') }}" class="btn btn-social-icon btn-google-plus" style="font-size: 30px; padding: 3px;"><i class="fab fa-google-plus"></i></a>
+
+                <a href="{{ url('auth/linkedin') }}" class="btn btn-social-icon btn-linkedin" style="font-size: 30px; padding: 3px;"><i class="fab fa-linkedin"></i></a>
+
+                <a href="{{ url('auth/apple') }}" class="btn btn-social-icon btn-apple-pay" style="font-size: 30px; padding: 3px;"><i class="fab fa-apple-pay"></i></i></a>
+
+                {{-- <a href="{{ url('login/twitter') }}" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+
+                <a href="{{ url('login/github') }}" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+
+                <a href="{{ url('login/bitbucket') }}" class="btn btn-social-icon btn-bitbucket"><i class="fa fa-bitbucket"></i></a> --}}
+
+            </div>
+
         </div>
     </form>
 </x-guest-layout>
