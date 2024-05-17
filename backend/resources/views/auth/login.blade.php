@@ -44,7 +44,7 @@
             </x-primary-button>
         </div>
         <div class="form-group text-center">
-
+{{-- https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=8686qqr&redirect_uri=...&state=987654321&scope=openid,profile,email" --}}
             <label for="name" class="col-md-4 control-label">Login With</label>
 
             <div class="col-md-12">

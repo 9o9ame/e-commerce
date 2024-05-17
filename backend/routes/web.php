@@ -20,16 +20,16 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('auth/google', [SocialController::class, 'redirectToGoogle']);
-Route::get('auth/google/callback', [SocialController::class, 'handleGoogleCallback']);
+Route::any('auth/google/callback', [SocialController::class, 'handleGoogleCallback']);
 
 Route::get('auth/facebook', [SocialController::class, 'redirectToFacebook']);
-Route::get('auth/facebook/callback', [SocialController::class, 'handleFacebookCallback']);
+Route::any('auth/facebook/callback', [SocialController::class, 'handleFacebookCallback']);
 
 Route::get('auth/apple', [SocialController::class, 'redirectToApple']);
-Route::get('auth/apple/callback', [SocialController::class, 'handleAppleCallback']);
+Route::any('auth/apple/callback', [SocialController::class, 'handleAppleCallback']);
 
 Route::get('auth/linkedin', [SocialController::class, 'redirectToLinkedIn']);
-Route::get('auth/linkedin/callback', [SocialController::class, 'handleLinkedInCallback']);
+Route::any('auth/linkedin/callback', [SocialController::class, 'handleLinkedInCallback']);
 
 
 require __DIR__.'/auth.php';
