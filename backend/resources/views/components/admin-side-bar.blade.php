@@ -226,6 +226,21 @@
             </ul>
         </li>
         <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class="bx bx-user -lock"></i>
+                </div>
+                <div class="menu-title">Role & Permissions</div>
+            </a>
+            <ul>
+                <li> <a href="{{route('roles.index')}}" target="_blank"><i
+                            class="bx bx-right-arrow-alt"></i>Roles</a>
+                </li>
+                <li> <a href="{{route('permissions.index')}}" target="_blank"><i
+                            class="bx bx-right-arrow-alt"></i>Permissions</a>
+                </li>
+            </ul>
+        </li>
+        <li>
             <a href="user-profile.html">
                 <div class="parent-icon"><i class="bx bx-user-circle"></i>
                 </div>
