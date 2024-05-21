@@ -393,28 +393,28 @@
                     <div class="user-box dropdown">
                         <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret"
                             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar">
+                            <img src="{{asset('assets/images/user1.png')}}" class="user-img" alt="user avatar">
                             <div class="user-info ps-3">
-                                <p class="user-name mb-0">Pauline Seitz</p>
+                                <p class="user-name mb-0">{{auth()->user()->name ?? ''}}</p>
                                 <p class="designattion mb-0">Web Designer</p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="javascript:;"><i
+                            <li><a class="dropdown-item" href="{{route('profile.edit')}}"><i
                                         class="bx bx-user"></i><span>Profile</span></a>
                             </li>
                             <li><a class="dropdown-item" href="javascript:;"><i
                                         class="bx bx-cog"></i><span>Settings</span></a>
                             </li>
-                            <li><a class="dropdown-item" href="javascript:;"><i
+                            <li><a class="dropdown-item" href="{{route('dashboard.index')}}"><i
                                         class='bx bx-home-circle'></i><span>Dashboard</span></a>
                             </li>
-                            <li><a class="dropdown-item" href="javascript:;"><i
+                            {{-- <li><a class="dropdown-item" href="javascript:;"><i
                                         class='bx bx-dollar-circle'></i><span>Earnings</span></a>
                             </li>
                             <li><a class="dropdown-item" href="javascript:;"><i
                                         class='bx bx-download'></i><span>Downloads</span></a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <div class="dropdown-divider mb-0"></div>
                             </li>
@@ -434,7 +434,14 @@
             </div>
         </header>
 
-        @yield('content')
+        @yield('content') <!--start overlay-->
+        <div class="overlay toggle-icon"></div>
+        <!--end overlay-->
+        <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+        <!--End Back To Top Button-->
+        <footer class="page-footer">
+            <p class="mb-0">Copyright © 2021. All right reserved.</p>
+        </footer>
     </div>
     <div class="switcher-wrapper">
         <div class="switcher-btn"> <i class='bx bx-cog bx-spin'></i>
