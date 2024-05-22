@@ -14,7 +14,27 @@ body {
 	overflow-x: hidden;
 	font-family: Roboto, sans-serif
 }
+.animated-button {
+    /* padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; */
+    transition: all 0.3s ease;
+    position: relative;
+}
 
+.animated-button:hover {
+    background: red;
+    animation: moveLeftRight 0.1s infinite alternate;
+}
+
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
 a {
 	text-decoration: none
 }
@@ -808,7 +828,7 @@ a {
 	color: #32393f;
   }
 
-  
+
   .w_chart canvas {
 	position: absolute;
 	top: 0;
@@ -1723,11 +1743,11 @@ a {
 .text-facebook{
 	color: #3b5998!important
  }
- 
+
  .text-twitter{
 	 color: #55acee!important
   }
- 
+
   .text-youtube{
 	 color: #e52d27!important
   }

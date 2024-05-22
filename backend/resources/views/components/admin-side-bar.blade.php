@@ -241,7 +241,7 @@
             </ul>
         </li>
         <li>
-            <a href="user-profile.html">
+            <a href="{{route('profile.edit')}}">
                 <div class="parent-icon"><i class="bx bx-user-circle"></i>
                 </div>
                 <div class="menu-title">User Profile</div>
