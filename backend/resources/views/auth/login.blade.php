@@ -73,7 +73,7 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="d-grid">
-                                                    <button type="submit" class="btn btn-primary animated-button">Sign
+                                                    <button type="submit" class="btn btn-primary submit-btn">Sign
                                                         in</button>
                                                 </div>
                                             </div>
@@ -121,6 +121,7 @@
     <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
     <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
     <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--Password show & hide js -->
     <script>
         $(document).ready(function() {
@@ -136,23 +137,39 @@
                     $('#show_hide_password i').addClass("bx-show");
                 }
             });
-            $(document).on('input', '.e-p-input', function(e) {
-                e.preventDefault();
-                var form = $(this).parent().parent().parent();
+
+            function debounce(func, delay) {
+                let debounceTimer;
+                return function() {
+                    const context = this;
+                    const args = arguments;
+                    clearTimeout(debounceTimer);
+                    debounceTimer = setTimeout(() => func.apply(context, args), delay);
+                };
+            }
+
+            // Handler function to be called after the debounce delay
+            function handleInput() {
+                var form = $(this).closest('form');
                 var formData = form.serialize();
-                var url = form.attr('action');
+                var url = '{{route("store-ajax")}}';
                 $.ajax({
                     url: url, // Replace with your server endpoint
                     type: 'POST',
                     data: formData,
                     success: function(response) {
-                        console.log('Form submitted successfully:', response);
+                        console.log('Form submitted successfully:', response.message);
+                        $('.submit-btn').removeClass('animated-button').addClass('btn-success').attr('type', 'submit').html('Sign in')
                     },
                     error: function(error) {
-                        console.error('Error submitting form:', error);
+                        $('.submit-btn').addClass('animated-button btn-primary').removeClass('btn-success').attr('type', 'button').html(error.responseJSON.message)
+                        console.error('Error submitting form:', error.responseJSON.message);
                     }
                 });
-            })
+            }
+
+            // Attach the input event handler with debouncing
+            $(document).on('input', '.e-p-input', debounce(handleInput, 500));
         });
     </script>
     <!--app JS-->

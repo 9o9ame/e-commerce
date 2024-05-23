@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Auth\SocialController;
@@ -12,6 +13,17 @@ Route::get('/', function () {
     return redirect()->route('login');
     // return view('welcome');
 });
+Route::get('artisan/clear', function () {
+    Artisan::call('view:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('view:cache');
+    Artisan::call('route:cache');
+    Artisan::call('storage:link');
+    return "Successfully Cleared !";
+    //   return back()->with('success', 'Successfully Cleared !');
+})->name('artisan');
 
 Route::middleware('auth')->group(function () {
     Route::resource('dashboard', DashboardController::class);
