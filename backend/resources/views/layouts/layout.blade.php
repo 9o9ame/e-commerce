@@ -539,6 +539,7 @@
     </div>
     <!--end switcher-->
     <!-- Bootstrap JS -->
+   
    <x-admin-footer-js></x-admin-footer-js>
 </body>
 

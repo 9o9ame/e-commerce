@@ -36,3 +36,4 @@
 			$('#image-uploadify').imageuploadify();
 		})
 	</script>
+     @livewireScripts
